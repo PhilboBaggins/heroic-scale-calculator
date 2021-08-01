@@ -5282,11 +5282,15 @@ var $author$project$Main$RealWorldMillimetres = function (a) {
 	return {$: 0, a: a};
 };
 var $elm$core$String$append = _String_append;
+var $author$project$Main$heroicScaleLower = 64;
+var $author$project$Main$mmToInches = function (mmVal) {
+	return mmVal / 25.4;
+};
 var $elm$core$String$fromFloat = _String_fromNumber;
 var $elm$html$Html$p = _VirtualDom_node('p');
 var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
-var $author$project$Main$differenceDisplay = F2(
+var $author$project$Main$rangeDisplay = F2(
 	function (v1, v2) {
 		return A2(
 			$elm$html$Html$p,
@@ -5297,10 +5301,6 @@ var $author$project$Main$differenceDisplay = F2(
 					$elm$core$String$fromFloat(v1 - v2))
 				]));
 	});
-var $author$project$Main$heroicScaleLower = 64;
-var $author$project$Main$mmToInches = function (mmVal) {
-	return mmVal / 25.4;
-};
 var $elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
 var $elm$html$Html$Attributes$style = $elm$virtual_dom$VirtualDom$style;
 var $elm$html$Html$table = _VirtualDom_node('table');
@@ -5426,7 +5426,7 @@ var $author$project$Main$view = function (model) {
 								_List_Nil,
 								_List_fromArray(
 									[
-										$elm$html$Html$text('Heroic scale difference')
+										$elm$html$Html$text('Heroic scale range')
 									]))
 							]))
 					])),
@@ -5476,7 +5476,7 @@ var $author$project$Main$view = function (model) {
 								_List_Nil,
 								_List_fromArray(
 									[
-										A2($author$project$Main$differenceDisplay, model.e / $author$project$Main$heroicScaleUpper, model.e / 61)
+										A2($author$project$Main$rangeDisplay, model.e / $author$project$Main$heroicScaleUpper, model.e / 61)
 									]))
 							])),
 						A2(
@@ -5536,7 +5536,7 @@ var $author$project$Main$view = function (model) {
 								_List_fromArray(
 									[
 										A2(
-										$author$project$Main$differenceDisplay,
+										$author$project$Main$rangeDisplay,
 										$author$project$Main$mmToInches(model.e / $author$project$Main$heroicScaleUpper),
 										$author$project$Main$mmToInches(model.e / 61))
 									]))
