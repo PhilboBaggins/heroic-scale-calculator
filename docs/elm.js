@@ -5281,7 +5281,9 @@ var $author$project$Main$RealWorldInches = function (a) {
 var $author$project$Main$RealWorldMillimetres = function (a) {
 	return {$: 0, a: a};
 };
-var $elm$core$String$append = _String_append;
+var $elm$core$String$concat = function (strings) {
+	return A2($elm$core$String$join, '', strings);
+};
 var $author$project$Main$heroicScaleLower = 64;
 var $author$project$Main$mmToInches = function (mmVal) {
 	return mmVal / 25.4;
@@ -5405,10 +5407,13 @@ var $author$project$Main$view = function (model) {
 								_List_fromArray(
 									[
 										$elm$html$Html$text(
-										A2(
-											$elm$core$String$append,
-											'Heroic scale (lower) - 1/',
-											$elm$core$String$fromInt($author$project$Main$heroicScaleLower)))
+										$elm$core$String$concat(
+											_List_fromArray(
+												[
+													'Lower end of heroic scale (1/',
+													$elm$core$String$fromInt($author$project$Main$heroicScaleLower),
+													')'
+												])))
 									])),
 								A2(
 								$elm$html$Html$th,
@@ -5416,10 +5421,13 @@ var $author$project$Main$view = function (model) {
 								_List_fromArray(
 									[
 										$elm$html$Html$text(
-										A2(
-											$elm$core$String$append,
-											'Heroic scale (upper) - 1/',
-											$elm$core$String$fromInt($author$project$Main$heroicScaleUpper)))
+										$elm$core$String$concat(
+											_List_fromArray(
+												[
+													'Upper end of heroic scale (1/',
+													$elm$core$String$fromInt($author$project$Main$heroicScaleUpper),
+													')'
+												])))
 									])),
 								A2(
 								$elm$html$Html$th,
