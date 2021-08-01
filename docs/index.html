@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Heroic scale calculator</title>
+        <style>
+            .heroic-scale-calculator th {
+                border:1px solid #C0C0C0;
+                padding:5px;
+                background:#F0F0F0;
+            }
+            .heroic-scale-calculator td {
+                border:1px solid #C0C0C0;
+                padding:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="heroic-scale-calculator">
+            <h1>Heroic Ccale Calculator</h1>
+            <div id='app'></div>
+        </div>
+        <script src="elm.js"></script>
+        <script>
+            Elm.Main.init({
+                node: document.getElementById('app')
+            })
+        </script>
+    </body>
+</html>
