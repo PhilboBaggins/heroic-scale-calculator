@@ -1,4 +1,4 @@
-# heroic-scale-calculator
+# Heroic scale calculator
 
 A simple browser based app to convert between real world measurements and that of heroic scale minitures. Conversions can be done in either direction, simply by changing the number in the appropriate box (other values will then be recalculated to keep everything in sync).
 
