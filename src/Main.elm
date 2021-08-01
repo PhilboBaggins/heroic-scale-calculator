@@ -75,7 +75,7 @@ view model =
             , th []
               [ text (String.append "Heroic scale (upper) - 1/" (String.fromInt heroicScaleUpper)) ]
             , th []
-              [ text "Heroic scale difference" ]
+              [ text "Heroic scale range" ]
             ]
           ]
         , tbody []
@@ -89,7 +89,7 @@ view model =
               , td []
                 [ viewInput "number" "Heroic (upper) (mm)" (model.realWorldMillimetres / heroicScaleUpper) HeroicMillimetresUpper ]
               , td []
-                [ differenceDisplay (model.realWorldMillimetres / heroicScaleUpper) (model.realWorldMillimetres / 61) ]
+                [ rangeDisplay (model.realWorldMillimetres / heroicScaleUpper) (model.realWorldMillimetres / 61) ]
               ]
           , tr []
               [ td [ style "font-weight" "bold" ]
@@ -101,7 +101,7 @@ view model =
               , td []
                 [ viewInput "number" "Heroic (upper) (inches)" (mmToInches (model.realWorldMillimetres / heroicScaleUpper)) HeroicInchesUpper ]
               , td []
-                [ differenceDisplay (mmToInches (model.realWorldMillimetres / heroicScaleUpper)) (mmToInches (model.realWorldMillimetres / 61)) ]
+                [ rangeDisplay (mmToInches (model.realWorldMillimetres / heroicScaleUpper)) (mmToInches (model.realWorldMillimetres / 61)) ]
               ]
             ]
          ]
@@ -116,6 +116,6 @@ viewInput : String -> String -> Float -> (String -> msg) -> Html msg
 viewInput t p v toMsg = 
   input [ type_ t, placeholder p, value (String.fromFloat v), onInput toMsg ] []
 
-differenceDisplay : Float -> Float -> Html msg
-differenceDisplay v1 v2 = 
+rangeDisplay : Float -> Float -> Html msg
+rangeDisplay v1 v2 = 
   p [] [ text (String.fromFloat (v1 - v2)) ]
